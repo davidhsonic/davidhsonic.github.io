@@ -1,1 +1,1790 @@
-<a href="test.html">here</a>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Notes</title>
+<style>
+* {
+    overflow-wrap: normal;
+}
+</style>
+
+<script>
+function setClassDisplay(type, checked) {
+  var effect = (checked) ? "block":"none"; 
+  var x = document.getElementsByClassName(type);
+  for (var i = 0; i < x.length; i++) {
+    x[i].style.display = effect;
+  }
+}
+
+function CheckAnswer() {
+  if (this.style.color == "black") {
+    var bgColor = "orangered";
+    if(this.classList.contains("right")) {
+      bgColor = "lawngreen";
+    }
+    if(this.classList.contains("hidden")) {
+      bgColor = "white";
+    }
+    this.style.backgroundColor = bgColor;
+    this.style.color = "white";
+  } else {
+    this.style.backgroundColor = "white";
+    this.style.color = "black";
+  }
+}
+
+window.onload = function() {
+  var answers = document.getElementsByClassName("answer");
+  for(var i = 0; i < answers.length; i++) {
+    answer = answers[i];
+    var Color = "black";
+    if(answer.classList.contains("hidden")) {
+      Color = "white";
+    }
+    answer.style.color = Color;
+    answer.onclick = CheckAnswer;
+  }
+}
+</script>
+</head>
+<body>
+
+<pre>
+<a href="#1">1: Introduction to Software Development</a>
+<a href="#2">2: Software Process Models</a>
+  <a href="#2.5">2.5: Iterative Models</a>
+  <a href="#2.6">2.6: Evolving the Iterative Model</a>
+  <a href="#2.7">2.7: Risk: The Problem with Plan-Driven Models</a>
+  <a href="#2.8">2.8: Agile Methodologies</a>
+  <a href="#2.9">2.9: Agile Values and Principles</a>
+  <a href="#2.10">2.10: eXtreme Programming (XP)</a>
+  <a href="#2.11">2.11: XP Overview</a>
+  <a href="#2.12">2.12: The Four Basic Activities</a>
+  <a href="#2.13">2.13: Implementing XP: The 12 Practices</a>
+  <a href="#2.14">2.14: Scrum</a>
+  <a href="#2.15">2.15: Scrum Roles</a>
+  <a href="#2.16">2.16: The Sprint</a>
+  <a href="#2.17">2.17: Scrum Artifacts</a>
+  <a href="#2.18">2.18: Sprint Flow</a>
+  <a href="#2.19">2.19: Lean Software Development</a>
+  <a href="#2.20">2.20: Kanban</a>
+  <a href="#2.21">2.21: Kanban Board, WIP, and Flow</a>
+  <a href="#2.22">2.22: Lead Time</a>
+<a href="#3">3: Project Management Essentials</a>
+  <a href="#3.1">3.1: Project Planning</a>
+  <a href="#3.2">3.2: Project Organization</a>
+  <a href="#3.3">3.3: Risk Analysis</a>
+  <a href="#3.4">3.4: Resource Requirements</a>
+  <a href="#3.5">3.5: Task Estimates</a>
+  <a href="#3.6">3.6: Project Schedule</a>
+  <a href="#3.7">3.7: Velocity</a>
+  <a href="#3.8">3.8: Project Oversight</a>
+  <a href="#3.9">3.9: Status Reviews and Presentations</a>
+  <a href="#3.10">3.10: Defects</a>
+  <a href="#3.11">3.11: The Retrospective</a>
+  <a href="#3.12">3.12: Conclusion</a>
+<a href="#4">4: Requirements</a>
+  <a href="#4.1">4.1: What Types of Requirements Are We Talking About?</a>
+  <a href="#4.2">4.2: User Requirements</a>
+  <a href="#4.3">4.3: Domain Requirements</a>
+  <a href="#4.4">4.4: Non-Functional Requirements</a>
+  <a href="#4.5">4.5: Non-Requirements</a>
+  <a href="#4.6">4.6: Requirements Gathering in a Plan-Driven Project</a>
+  <a href="#4.7">4.7: But I Don't Like Writing!</a>
+  <a href="#4.8">4.8: Outline of a Functional Specification</a>
+  <a href="#4.9">4.9: Overview</a>
+  <a href="#4.10">4.10: Disclaimer</a>
+  <a href="#4.11">4.11: Author's Name</a>
+  <a href="#4.12">4.12: Scenarios of Typical Usage</a>
+  <a href="#4.13">4.13: Open Issues</a>
+  <a href="#4.14">4.14: Design and New Feature Ideas</a>
+  <a href="#4.15">4.15: One More Thing</a>
+  <a href="#4.16">4.16: Requirements Gathering in an Agile Project</a>
+  <a href="#4.17">4.17: The Three Cs</a>
+  <a href="#4.18">4.18: Card</a>
+  <a href="#4.19">4.19: Conversation</a>
+  <a href="#4.20">4.20: Confirmation</a>
+  <a href="#4.21">4.21: INVEST in Stories</a>
+  <a href="#4.22">4.22: Independent</a>
+  <a href="#4.23">4.23: Negotiable</a>
+  <a href="#4.24">4.24: Valuable</a>
+  <a href="#4.25">4.25: Estimable</a>
+  <a href="#4.26">4.26: Small</a>
+  <a href="#4.27">4.27: Testable</a>
+  <a href="#4.28">4.28: Product Backlog</a>
+  <a href="#4.29">4.29: SMART Tasks</a>
+  <a href="#4.34">4.34: Time-Boxed</a>
+  <a href="#4.36">4.36: Requirements Digging</a>
+  <a href="#4.39">4.39: Problems of Understanding</a>
+  <a href="#4.42">4.42: Analyzing the Requirements</a>
+<a href="#18">18: Ethics and Professional Practice</a>
+  <a href="#18.1">18.1: Introduction to Ethics</a>
+  <a href="#18.2">18.2: Ethical Theory</a>
+  <a href="#18.3">18.3: Deontological Theories</a>
+  <a href="#18.4">18.4: Consequentialism (Teleological Theories)</a>
+  <a href="#18.5">18.5: Ethical Drivers</a>
+  <a href="#18.6">18.6: Legal Drivers</a>
+  <a href="#18.7">18.7: Professional Drivers</a>
+  <a href="#18.8">18.8: Preamble to the ACM/IEEE-CS Software Engineering Code of Ethics</a>
+  <a href="#18.9">18.9: Ethical Discussion and Decision Making</a>
+  <a href="#18.10">18.10: Identifying and Describing the Problem</a>
+  <a href="#18.11">18.11: Analyzing the Problem</a>
+  <a href="#18.12">18.12: Case Studies</a>
+  <a href="#18.13">18.13: The Last Word on Ethics?</a>
+
+Display:
+<input type="checkbox" onclick="setClassDisplay('summary',this.checked)" checked>Summaries
+<input type="checkbox" onclick="setClassDisplay('questions',this.checked)" checked>Questions
+<input type="checkbox" onclick="setClassDisplay('references',this.checked)" checked>References
+</pre><br>
+
+<h1 id="1">1: Introduction to Software Development</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+chapter 1 was a short chapter and it talk about the best way to develop software , you need to understand how to work with a team, so you need good communication skill. You also need understand how to work with customers and explain this to them. you need to use a process the everyone know so it would be easier to coordinate different code from different people in the same team. it also talks about understanding the right tools to use.<br>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+How to keep track of everyone's work of a project in software developemnt?<br><br>
+
+<b class="answer hidden">Assign small parts to a specific person and keep updated after each job is done.</b>
+</span>
+
+<span class="references">
+<h2>References</h2>
+"Software Project Management" (Ahmed, 2015)<br>
+</span>
+
+<h1 id="2">2: Software Process Models</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+<h3>Start of Chapter 2 Summary</h3>
+this chapter talks about software process models and the four variables which are cost, time, quality, scope also called features. the chapter explain that you'll want to minimize each variables, and find the perfect spot for cost time quality and scope the make the best project. the book also explain that you need to focus on the features part of the project if your are the programmer because the cost and time your won't be able to control. late in the chapter the book talk about the waterfall process and that it's bad because it have you doing one thing then moving to the next its going linear, but that not how coding work people usually have to go back to some other part of the project to fix something or add something
+<h3>Mid-Chapter 2 Summary</h3>
+<p>Iterative models are an software engineering model that takes a problem and creates a solution one step at a time. A team will take 
+the known requirements and prioritize them based on the most important features to the customer. Each iteration of this process is
+viewed as a small project that brings constant small updates to a system. This model is implemented through evolutionary prototyping
+which prioritizes requirements as they are received. Hence allows for products to contain many new features as time progresses. A
+downside to evolutionary prototyping is the overly optimistic views about time, money, and progress. This model becomes sort of
+inefficient as more requirements are added. Although the downsides may weigh upon this implementation, it tends to work well with
+small, close teams. Although plan-driven models have worked well in the past, the main issue with them is risk. Risk can be in the
+form of schedule slips, project cancellation, etc. Agile Methodologies on the other hand recognize this and minimizes the risk. In the
+mid 90's a new lightweight-plan-driven model was created. This differed from the heavyweight-plan-driven because it required less
+documentation and few process controls for small to medium sized projects. The projects generated by the lightweight model tend to be
+used as smaller projects that provide services toward a bigger project. In early 2001 the Agile Manifesto was written. This was a
+description of values and 12 principles. The values will be lists at the bottom of the summary*. Another way to develop software is
+the eXtreme Programming(XP) method. It was created around 1995 and is described as a "lightweight, efficient, low-risk, flexible,
+predictable, scientific, and fun way to develop software." The four fundamental ideas of this method is Heavy customer involvement,
+Continuous unit testing, Pair programming, and Short iteration cycles and frequent releases. The ideas around XP programming are
+what they say they are. There are a total of four main activities in XP: designing, coding, testing, and listening. Designing is
+creating structure that organizes the logic for the system. Coding is the main activity, and testing is very important for debugging.
+Listening involves gaining knowledge from your partner or the customer. XP is full of many standards, including its 12 practices(list
+below). The second agile methodology is Scrum, named after rugby, which means restarting the play after a rule is broken. Scrum is
+older than XP but the main difference is that scrum dev team typically consist of no more than 10 programmers. Similarly to other
+agile methods, Scrum puts an emphasis on small team efficacy and collective ownership.</p>
+
+<h3>Agile Values</h3><ul>
+<li>Individuals and interactions over processes and tools</li>
+<li>Working software over comprehensive documentation</li>
+<li>Customer collaboration over contract negotiation</li>
+<li>Responding to change over following a plan</li>
+</ul>
+
+<h3>Agile Principles</h3><ol>
+<li>Our highest priority is to satisfy the customer through early and continuous delivery of valuable software.</li>
+<li>Welcome changing requirements, even late in development. Agile processes harness change for the customer's competitive advantage.</li>
+<li>Deliver working software frequently, from a couple of weeks to a couple of months, with a preference to the shorter timescale.</li>
+<li>Business people and developers must work together daily throughout the project.</li>
+<li>Build projects around motivated individuals. Give them the environment and support they need, and trust them to get the job done.</li>
+<li>The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.</li>
+<li>Working software is the primary way to measure progress.</li>
+<li>Agile processes promote sustainable development. The sponsors, developers, and users should be able to maintain a constant pace indefinitely.</li>
+<li>Continuous attention to technical excellence and good design enhances agility.</li>
+<li>Simplicity—the art of maximizing the amount of work not done—is essential.</li>
+<li>The best architectures, requirements, and designs emerge from self-organizing teams.</li>
+<li>At regular intervals, the team reflects on how to become more effective and then tunes and adjusts its behavior accordingly.</li>
+</ol>
+
+<h3>12 XP Practices</h3><ul>
+<li>The planning game: Develop the scope of the next system release by combining buisness priority and technical issues</li>
+<li>Small releases</li>
+<li>Metaphor: A simple story of how the system works</li>
+<li>Simple Design</li>
+<li>Testing</li>
+<li>Refactoring: Restructure the system without changing its behavior.</li>
+<li>Pair programming</li>
+<li>Collective Ownership</li>
+<li>Continuous integration</li>
+<li>40-hour week: Work a regular 40-hour week</li>
+<li>On-site customer: A customer that is apart of the team.</li>
+<li>Coding Standards</li>
+</ul>
+</span>
+
+<h1 id="2.5">2.5: Iterative Models</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+Which of the following is not an advantage of iterative models?
+<ol>
+<li class="answer wrong">The customer is involved after the start of the development cycle.</li>
+<li class="answer wrong">Mistakes by the programmers are accounted for.</li>
+<li class="answer right">You know all the requirements for the final product at the start.</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Decription of Iterative Models: p. 11 para. 2-<br>
+</span>
+
+<h1 id="2.6">2.6: Evolving the Iterative Model</h1>
+<span class="questions">
+<h2>Questions</h2>
+Which of the following isn't an upside of Evolutionary Prototyping?
+<ol>
+<li class="answer right">It makes scheduling easy and reliable.</li>
+<li class="answer wrong">It works well with changing or ambiguous requirements.</li>
+<li class="answer wrong">It makes it easier for the customer and management to track progress.</li>
+</ol>
+
+Which of the following isn't a downside of Evolutionary Prototyping?
+<ol>
+<li class="answer wrong">The code can be hard to maintain due to the frequently changing requirements.</li>
+<li class="answer wrong">If too few requirements are implemented in each cycle, it can give an inaccurately high feeling of progress.</li>
+<li class="answer right">The programmers are pushed into putting too much effort into making clean and bug-free code.</li>
+</ol>
+
+Evolutionary Prototyping is a recommended approach for new programmers.
+<ol>
+<li class="answer wrong">True</li>
+<li class="answer right">False</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Definition of Evolutionary Prototyping: p. 12 para. 1<br>
+</span>
+
+<h1 id="2.7">2.7: Risk: The Problem with Plan-Driven Models</h1>
+<span class="questions">
+<h2>Questions</h2>
+Which of the following is not an example of risk?
+<ol>
+<li class="answer right">Requirements Changing</li>
+<li class="answer wrong">Schedule Slips</li>
+<li class="answer wrong">False Feature Richness</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Examples of Risk: p. 13 para. 1<br>
+</span>
+
+<h1 id="2.8">2.8: Agile Methodologies</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+Who are Agile models meant for?
+<ol>
+<li class="answer right">Small teams making small projects</li>
+<li class="answer wrong">Large teams making large projects</li>
+<li class="answer wrong">Small teams making large projects</li>
+</ol>
+
+What does lightweight mean?<br><br>
+
+<b class="answer hidden">Mainly involving coding, with little documentation</b>
+</span>
+
+<span class="references">
+<h2>References</h2>
+What lightweight means: p. 13 para. 4<br>
+</span><h1 id="2.9">2.9: Agile Values and Principles</h1><span class="questions"><h2>Questions</h2>Which of the following isn't a value from the Agile Manifesto?
+<ol>
+<li class="answer wrong">Individuals and interactions over processes and tools</li>
+<li class="answer right">Clean, clear code over coding quickly.</li>
+<li class="answer wrong">Customer collaboration over contract negotiation</li>
+</ol>
+
+The writers of the Agile Manifesto thought that the latter items in each value were still valuable.
+<ol>
+<li class="answer right">True</li>
+<li class="answer wrong">False</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Values of the Agile Manifesto: p. 14 list 1<br><br>
+
+Principles of the Agile Manifesto: p. 14 list 2<br>
+</span>
+
+<h1 id="2.10">2.10: eXtreme Programming (XP)</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+What are the characteristics of eXtreme Programming?<br><br>
+
+<b class="answer hidden">XP is a “lightweight, efficient, low-risk, flexible, predictable, scientific, and fun way to develop software.”</b>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Beck, K. Extreme Programming Explained: Embrace Change. (Boston, MA: Addison-Wesley, 2000.)<br>
+</span>
+
+<h1 id="2.11">2.11: XP Overview</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+Which of the following isn't a fundamental idea of XP?
+<ol>
+<li class="answer wrong">Pair programming</li>
+<li class="answer wrong">Continuous unit testing</li>
+<li class="answer right">Work in progress</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Four Fundamental Ideas of XP: p. 15 list 1<br>
+</span>
+
+<h1 id="2.12">2.12: The Four Basic Activities</h1>
+<span class="questions">
+<h2>Questions</h2>
+Which of the following activities isn't a part of XP?
+<ol>
+<li class="answer wrong">Designing</li>
+<li class="answer right">Planning</li>
+<li class="answer wrong">Listening</li>
+</ol>
+</span>
+
+<span class="references"><h2>References</h2>Four Activities of XP: p. 16 list 1<br>
+</span>
+
+<h1 id="2.13">2.13: Implementing XP: The 12 Practices</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+Which of the following isn't a practice of XP?
+<ol>
+<li class="answer right">Iterating</li>
+<li class="answer wrong">Metaphor</li>
+<li class="answer wrong">Collective Ownership</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+12 Practice of XP: p. 16 list 2 & p. 17 list 1 & p. 18 list 1<br>
+</span>
+
+<h1 id="2.14">2.14: Scrum</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+Scrum is:
+<ol>
+<li class="answer right">A management approach</li>
+<li class="answer wrong">A programming approach</li>
+<li class="answer wrong">A communication approach</li>
+</ol>
+</span>
+
+<h1 id="2.15">2.15: Scrum Roles</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+User stories are:
+<ol>
+<li class="answer wrong">Feedback</li>
+<li class="answer wrong">Input to a program</li>
+<li class="answer right">Features</li>
+</ol>
+
+Which of the following isn't a role defined by Scrum?
+<ol>
+<li class="answer right">Project manager</li>
+<li class="answer wrong">Product owner</li>
+<li class="answer wrong">Scrum master</li>
+<li class="answer wrong">Development team</li>
+</ol>
+
+The Scrum master makes the decisions.
+<ol>
+<li class="answer wrong">True</li>
+<li class="answer right">False</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+The Three Roles in Scrum: p. 19 para. 1-3<br>
+</span>
+
+<h1 id="2.16">2.16: The Sprint</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+A Sprint is an iteration of between one and four weeks. It's a fixed duration period and its output is determined by the amount of work done by the team in that period.<br>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Sprints are defined by their limited:
+<ol>
+<li class="answer wrong">Scope</li>
+<li class="answer right">Time</li>
+<li class="answer wrong">Budget</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+The Sprint in Scrum: p. 19 para. 4<br>
+</span>
+
+<h1 id="2.17">2.17: Scrum Artifacts</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Two backlogs in Scrum. <br>
+1. Product Backlog: Created by the product owner. Is a list of all product requirements. Prioritised by the owner. <br>
+2. Sprint Backlog: Created by the dev. team. Breakdown of the product backlog into a prioritized list. Usually a visual board(physical or digital). <br>
+In an ongoing sprint, only the devs can add tasks to the sprint backlog. Outside entities can only add to the product backlog. <br>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Which of the following isn't a backlog in Scrum?
+<ol>
+<li class="answer wrong">The sprint backlog</li>
+<li class="answer wrong">The product backlog</li>
+<li class="answer right">The story backlog</li>
+</ol>
+
+Which of the following isn't allowed in Scrum?
+<ol>
+<li class="answer wrong">The product owner adding to the sprint backlog between sprints</li>
+<li class="answer right">The product owner adding to the sprint backlog during a sprint</li>
+<li class="answer wrong">The development team adding to the sprint backlog during a sprint</li>
+</ol>
+
+The sprint backlog is visual.
+<ol>
+<li class="answer right">True</li>
+<li class="answer wrong">False</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+The Scrum Backlogs: p. 9 para. 5<br>
+</span>
+
+<h1 id="2.18">2.18: Sprint Flow</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Planning phase before sprint starts. User stories are divided into prioritized groups. Fill up the time allotted with tasks. No task in a sprint is longer than one day of work. Breaking the tasks down makes it easier to estimate them. <br>
+Daily scrum meetings. No longer than 30 minutes. Help track progress. <br>
+After everything is done, a final scrum brings closure to the whole process. Requirements left in the product backlog is added to the next release. <br>
+</span>
+
+<h1 id="2.19">2.19: Lean Software Development</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Set of principles designed to improve productivity, quality and customer satisfaction. <br><br>
+
+Seven key principles of Poppendiecks:<br>
+1. Eliminate waste: Eliminate everything that doesn't add value to the product. <br>
+2. Build quality in: Two techniques used to improve quality; Pair programming and Test driven development (TDD). Constant feedback is another technique. <br>
+3. Create knowledge: The team must learn new things constantly. <br>
+4. Defer commitment: To make the big, irreversible decisions for later. <br>
+5. Deliver fast: Make it reasonably as fast as possible. Stick to the lean principles to optimize that. <br>
+6. Respect people: Pretty clear<br>
+7. Optimize the whole: Keep the bigger picture in mind. <br>
+</span>
+
+<h1 id="2.20">2.20: Kanban</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Derived from lean manufacturing. Three main ideas: work-in-progress, flow and lead time. <br>
+</span>
+
+<h1 id="2.21">2.21: Kanban Board, WIP, and Flow</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+WIP and flow depicted visually on a Kanban board. Similar to a scrum task board. <br>
+</span>
+
+<h1 id="2.22">2.22: Lead Time</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+It's the amount of time it takes for the team to move a task from one column to another in the kanban board. The date the task is started in the ToDo column is called entry date. The day it's done in called the done date. <br>
+</span>
+
+<h1 id="3">3: Project Management Essentials</h1>
+
+<span class="summary">
+<h2>Chapter Summary</h2>
+Project management is relevant for developers because if they ever work in a group, they'll either be managed (under a plan-driven system) or have partial responsibility for managing a project (under an Agile system). Project management is made up of three areas: project planning, project oversight, and the retrospective, which occur before, during, and after a project, respectively. The first step of project planning is deciding how the team will be organized, as well as what the process of making the project will be like and what each day of developing will look like. The next step is determining all that could go wrong and how to prevent what can be prevented and deal with the inevitable problems. The next step is figuring out what resources will be needed for the project. Next, the project is broken down into tasks small enough to predict the time needed for each, and that, along with considerations like certain tasks only being doable after other tasks and when developers will actually be able to code, is used to create a schedule for the project (though it's useful to include in the schedule some way to show how well everyone is able to follow the schedule). Project oversight includes meetings to discuss the current state of the project and any problems that anyone has run into. It also includes oversight from a manager to make sure that everything and everyone (including the manager themselves) is working smoothly, which includes providing positive motivation, listening to the developers, and separating the developers from distractions outside their roles. It may also include using a defect tracking system to keep track of defects and make sure they're dealt with. The retrospective is where the time spent on the project is examined to decide what did and didn't work as expected or desired and what should be done differently next time (as well as who will make sure things are done differently).
+<h2>Summary</h2>
+Understanding project management is required. Tasks involved:
+<ul>
+<li>Project planning</li>
+<li>Estimation and scheduling</li>
+<li>Resource management</li>
+<li>Project oversight</li>
+<li>Project reviews and presentations</li>
+<li>The project retrospective</li>
+</ul>
+Project managers are responsible for
+<ul>
+<li>managing scope, costs, estimation, schedule, quality, personnel, communication, risk, etc.</li>
+</ul>
+The team manage the Agile project. They need to make to sure there is no delay in management decision-making. If there is a manager,
+<ul>
+<li>make sure the team has the resources</li>
+<li>ensure the team adheres to agile values and principles</li>
+<li>facilitate communication</li>
+<li>shield the team from outside interruptions</li>
+</ul>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+As developers, what tasks do we need to focus on the most? (Pg: 29)
+
+<b class="answer hidden">
+<ul>
+<li>Project planning</li>
+<li>Estimation and scheduling</li>
+<li>Resource management</li>
+<li>Project oversight</li>
+<li>Project reviews and presentations</li>
+<li>The project retrospective</li>
+</ul>
+</b>
+
+(T/F) In agile projects, the teammates are only responsible for managing their portion of the project. (Pg: 29)<br><br>
+
+<b class="answer hidden">
+False (Agile projects allow everyone on the team to be responsible for the whole project)</b>
+</span>
+
+<h1 id="3.1">3.1: Project Planning</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+For a plan-driven process model, a project plan is an actual document of how the project will be managed, written by the project manager.<br><br>
+
+A project plan has seven parts:
+<ul>
+<li>Introdution and explanation of the project</li>
+<li>Team organization</li>
+<li>Risk analysis</li>
+<li>Hardware, software, and human resource requirements</li>
+<li>Task list and size and effort estimates</li>
+<li>Project schedule</li>
+<li>Project monitoring and reporting mechanisms</li>
+</ul>
+An agile project is feature-based, mulitlayer and organized into iterations. The project is owned by the team.<br>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+(T/F) Project planning is done and fixed from the beginning. (Pg: 30)<br><br>
+
+<b class="answer hidden">False (Project planning is a fluid and continuous process)</b><br><br>
+
+What is a project plan? List different parts of it. (Pg: 30)<br><br>
+
+<b class="answer hidden">It's a document written by the project manager and then approved by both the dev. team and upper management.<br><br>
+
+Consists of following parts:
+<ul>
+<li>Introduction and explanation of the project</li>
+<li>Team organization</li>
+<li>Risk analysis</li>
+<li>Hardware, software, and human resource requirements</li>
+<li>Task list and size and effort estimates</li>
+<li>Project schedule</li>
+<li>Project monitoring and reporting mechanisms, collectively known as project oversight</li>
+</ul>
+</b>
+</span>
+
+<h1 id="3.2">3.2: Project Organization</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Three things for project organization are:
+<ul>
+<li>How you are going to organize the team</li>
+<li>Deciding the process model</li>
+<li>Managing the project on day-to-day basis</li>
+</ul>
+These are important for brand new projects and inexperienced teams because it will help you to start the actual project work.<br><br>
+
+Since Agile team is small, it is easy to organize the project. The code, testings and expertise are all shared within the team. Being in an agile team will improve a lot of skills learning new things doing agile projects.<br><br>
+
+Agile projects are iterative, use short development cycles, and produce running code with more features at the end of each iteration. The team has daily meetings, integrations and shared or paired programming.<br>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+How are agile projects organized on a daily basis? (Pg: 31)<br><br>
+
+<b class="answer hidden">On a daily basis, developers do daily meetings/integrations. The work iterations are usually very small and most of the time is spent writing executing tests.</b>
+</span>
+
+<h1 id="3.3">3.3: Risk Analysis</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+We need to think of possible factors that can go wrong and how we are going to prevent from happening.
+<ul>
+<li>Schedule slips : A task could take longer than we expected. When it happens, we need to report immediately the estimated late time. It could happen often when there is not regular status meetings like plan-driven project.</li>
+<li>Defect rate is excessive : If the program has a lot of bugs in tests, we should pause writing codes and look at the code a little bit and clean up the bug.</li>
+<li>Requirements misunderstood : Regular meetings and frequent releases will help the misunderstanding between customers and developers.</li>
+<li>Requirement churn : To release an update, it requires adding new features and fixing bugs. Churn happens when the customer continues to change requirements while development is underway.</li>
+<li>Turnover : Best way to reduce turnover is to 1) give developers interesting work 2) have them work in pleasant enviroment 3) give them control over their own schedules.</li>
+</ul>
+All the risks are needed to address and find a way to avoid the risk. We can remove some feature from a release, stop work on new features and do a bug hunt, negotiate new features into a future release, which is called mitigation. Then, we should have a plan to handle identifiable risks.<br>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+What are the general risks to look out for?<br>
+
+<b class="answer hidden">
+<ul>
+<li>Schedule slips</li>
+<li>Excessive defect rate</li>
+<li>Misunderstanding the requirements</li>
+<li>Changing the requirements regularly</li>
+<li>Turnover</li>
+</ul>
+</b>
+</span>
+
+<span class="references">
+<h2>References</h2>
+How are new requirements dealt with? (Pg: 32)<br><br>
+
+The new requirements are reviewed/examined by a change control board(CCB). They decide whether to add a new requirement to the list of things to be implemented.<br><br>
+
+What some good ways to deal with turnover? (Pg: 32)<br><br>
+
+If a developer leaves, the overload of work should be equally divided amongst everyone on the team. Principles like <i>common code ownership</i> and <i>paired programming</i> help divide that work efficiently.<br>
+</span>
+
+<h1 id="3.4">3.4: Resource Requirements</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+(pg 33)<br><br>
+
+Resource Requirements are a simple part of management where you identify the whats, whens and wheres of the resources of the project. It includes Workstations, people, software, hardware and more.<br>
+</span>
+
+<h1 id="3.5">3.5: Task Estimates</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+(pg 33)<br><br>
+
+The first steps towards a schedule is seeing what you'll be doing and figuring out how long each step will take. Task estimates are just that, estimates. It is impossible to know exactly how long a specific task will take and how accurate the developers prediction is largely based off of experience. The bigger the task the harder it is to know so it is better to breat down tasks that are estimated to take about a week or shorter. Then you can add them together and start doing larger estimates. "The estimation mantra is: size first, then effort and cost estimates, finally schedule."(pg 33) "Managers should never do development estimates. Even if a manager has been a developer in the past, unless they're deeply involved in the actual development work, they shouldn't be in the business of doing development estimates."(pg 34)<br>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+What is NOT a variable in the estimation mantra? (pg.33)
+<ul>
+<li class="answer wrong">Effort and Costs</li>
+<li class="answer wrong">Program Size</li>
+<li class="answer right">Program Quality</li>
+<li class="answer wrong">Schedule</li>
+</ul>
+
+What is the Delphi estimation technique? (short answer) (pg.33)<br><br>
+
+<b class="answer hidden">
+Give a developer work to do, after they have some time to consider the solution ask them for 3 numbers. These 3 numbers represent:
+<ol>
+<li>The minimum amount of time it will take to complete</li>
+<li>The maximum amount of time it will take to complete</li>
+<li>The normal amount of time it will take to complete</li>
+</ol>
+</b>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Delphi estimation technique: pg. 33 (last 2 paragraphs)
+<ol>
+<li>The minimum amount of time it will take to complete</li>
+<li>The maximum amount of time it will take to complete</li>
+<li>The normal amount of time it will take to complete</li>
+</ol>
+</span>
+
+<h1 id="3.6">3.6: Project Schedule</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+(pg 34-35)<br><br>
+
+Once you have the task estimates you can create a schedule. Important things to think about when making a cycle include the dependencies between tasks, your duty cycle, inclusion of sickdays and vacations, as well as the inability to schedule a developer to work on two tasks at once. It is also usedful to use project-scheduling software to make the schedule. It allows for greater organisation, especially for larger projects. Spolsky's Painless Schedule (pg 35) lists the following that should be in every schedule:
+<ul>
+<li>Feature name</li>
+<li>Tasks within the feature</li>
+<li>The Priority of the task</li>
+<li>The Original Estimate (in person hours)</li>
+<li>The Current Estimate (in person-hours)</li>
+<li>The Elapsed Time worked on the task (in person-hours)</li>
+<li>The Remaining Time on the task (also in person-hours)</li>
+</ul>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+What is a duty cycle? (Short Answer) (pg.35)<br><br>
+
+<b class="answer hidden">Answer should say something along the lines of:<br><br>
+"The amount of person hours (per day) a developer actually spends developing software"</b><br><br>
+
+How many items are in Spolsky's Painless schedule? (pg.35)
+<ul>
+<li class="answer wrong">7</li>
+<li class="answer wrong">5</li>
+<li class="answer wrong">11</li>
+<li class="answer right">9</li>
+</ul>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Project Schedule (pg. 34)<br><br>
+
+Once you have time estimates for an iteration, you can create a schedule. 4 items (below) state what you should consider while creating the schedule.
+<ul>
+<li>Have developers state the dependencies between tasks. Some can't start until other dependencies finish.</li>
+<li>Find out what the duty cycle is.</li>
+<li>Consider weekends, vacations, sick days, training, etc.</li>
+<li>One developer can only one task at a time.</li>
+</ul>
+
+
+Spolsky's Painless Schedule (pg. 35)
+
+<ul>
+<li>Feature name</li>
+<li>Future tasks</li>
+<li>The priority of the task</li>
+<li>The original estimate in person hours</li>
+<li>The current estimate in person hours</li>
+<li>The elapsed time in person hours</li>
+<li>The remaining time in person hours</li>
+</ul>
+</span>
+
+<h1 id="3.7">3.7: Velocity</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+(pg 35)<br><br>
+
+The Velocity of a task can also prove useful when creating a schedule. The velocity is defined as the estimated effort of a task, divided by the actual effort. If you overestimate your task, your velocity will be greater than one (your task took less time than you originally thought); if you underestimate, it will be less than one (the task took you longer than you originally thought). Ideally, velocity should be 1.0, but that hardly ever happens. Velocity can be used to give both the manager and the developers an idea of how accurate their predictions are.<br>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+What is the ideal velocity of a project? (pg.35)
+<ul>
+<li class="answer wrong">0</li>
+<li class="answer wrong">2.0</li>
+<li class="answer right">1.0</li>
+<li class="answer wrong">0.5</li>
+</ul>
+
+True or false, the ideal velocity is commonly achieved? # (pg.36)
+<ul>
+<li class="answer right">False</li>
+<li class="answer wrong">True</li>
+</ul>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Velocity (pgs. 35-36)
+<ul>
+<li>Allows managers and developers to have an idea of how accurate their estimates were. This allows for schedule improvement. PG.35-36</li>
+</ul>
+</span>
+
+<h1 id="3.8">3.8: Project Oversight</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Project oversight is the part of project management that happens during the programming portion of a project. It includes meetings to discuss the current architure, design and code of the project, as well as management of the schedule, developers, process, and the manager themselves. How it is handled is part of the agreed upon project process.<br><br>
+The manager also has to keep the developers happy and motivated, mainly by avoiding things like motivating through fear, treating the developers as resources, or allowing the developers to get caught up in distractions outside the realm of writing the program.<br>
+</span>
+
+<h1 id="3.9">3.9: Status Reviews and Presentations</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Status reviews are a part of every project, though larger projects have more formal ones. It is important to be honest and direct about your current progress and expected progress before the next review, as well as any problems you've run into. Avoid the temptation to just say what management wants to hear, because that leads to problems later.<br><br>
+When giving a presentation, design it around the knowledge level of the audience and the purpose of the presentation. When using PowerPoint, keep the presentations short and to the point, and keep the slides barebones and the bullet points brief and not full sentences.<br>
+</span>
+
+<h1 id="3.10">3.10: Defects</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Developers should try to minimize the amount of defects they introduce into their code. Despite this, defects will inevitably find their way into code, so developers should also try to find as many of the defects in code as possible before releasing it. The found defects can be referenced in a defect tracking system, which tracks current known defects and their severity. For example, one possible set of levels of severity is:
+<ol>
+<li>Fatal: Crashes or non-functioning vital features</li>
+<li>Severe: Non-functioning major features</li>
+<li>Serious: Non-functioning major features with work-arounds</li>
+<li>Annoying: Defect or error that may annoy the user, but doesn't affect functionality</li>
+<li>New Feature Request: A request for a new feature (not a defect)</li>
+</ol>
+When fixing defects, developers should start with the highest severity ones. Developers should never release a product with Fatal or Severe defects in it, and in most cases should also remove Serious defects.<br>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+if you don't know what the defect is how would you make a defect tracking system if you don't know what your tracking?<br><br>
+
+<b class="answer hidden">you have to wait till the program is being used and a defect happen in order to track similar defects.</b>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Defect levels(pg 37)
+<ol>
+<li>fatal: the program crashes</li>
+<li>severe: A major piece of the project don't work</li>
+<li>serious: A little piece of the project don't work but you can get around it</li>
+<li>Annoying: minor defect or error but not a big problem.</li>
+<li>new features: you have to add something new to your project.</li>
+</ol>
+the first 3 levels should be caught before the program is released  
+</span>
+
+<h1 id="3.11">3.11: The Retrospective</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Retrospectives are done after completing some goal, whether a project or major iteration under a plan-driven process, or an iteration, such as a sprint, under an agile process. During retrospectives, questions are asked about the developers' experience completing the goal, such as:
+<ol>
+<li>What went right? Did things go as expected, and did we implement all the features the customer wanted?</li>
+<li>What went wrong? How many defects did we need to deal with, and how much overtime did we need to finish on time?</li>
+<li>What process issues came up? Which aspects of our planned process were problematic or infeasable in practice?</li>
+<li>What do we need to fix for next time? Given our answers to the previous questions, what do we need to fix in our process, work habits, or environment for the next project?</li>
+<li>Who's responsible for the fixes? Who should be in charge of making sure we follow our modified process?</li>
+</ol>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+1.  what is the importance of the Retrospective part of the project?<br><br>
+
+<b class="answer hidden">the importance of the Retrospective part of the project is that you get to see what you did wrong and what you didn't right also get to take a look at how you team did overall. you get to take a bird's-eyes view</b>
+</span>
+
+<span class="references">
+<h2>References</h2>
+The Retrospective(pg 38)
+<ol>
+<li>what went right/wrong? did it go as plan</li>
+<li>how many defects did it take longer then expected.</li>
+<li>did you follow the process, if not why</li>
+<li>what can you/the team improve on for next project.</li>
+<li>who should fix the problems if there was any.</li>
+</ol>
+</span>
+
+<h1 id="3.12">3.12: Conclusion</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+The developers should own the process and management should be supportive, listen to the developers (especially when it comes to schedules and estimates), and seperate the developers from distractions outside their roles.<br>
+</span>
+
+<h1 id="4">4: Requirements (Pg: 39)</h1>
+
+<span class="summary">
+<h2>Chapter Summary</h2>
+Before starting work on implementing a project, developers need to first work out the functional requirements for the project in order to be productive and make quality, useful code. Functional requirements are descriptions of what the end product must be able to do, from the users' perspective (meaning without any mention of the implementation). Functional requirements must be written in a natural language in order to make it easiest to imagine and describe possible features. Requirements include descriptions of what the users will see and do when using the product, mentions of the ways the product must function due to the areas it works in (income tax, wireless communication), descriptions of the more technical, non-obvious functions and qualities that the product must have to avoid the users having a frustrating or harmful experience, and pointed mentions of the things that are not currently considered requirements. There are different forms of functional requirements for plan-driven and agile projects. Plan-driven projects have functional specifications, which are written by one person (likely a manager), and include a brief description of the product's intended functionality and multiple scenarios describing various intended possible user experiences, along with excessively clear mention of whether the specification is final and uncertainties to bring up in the next meeting with the customer. Agile projects have user stories, which are descriptions of what the customer wants the product to be able to do or what they want to be able to do using the product, ideally along with mention of which types of users will want which things out of the product and why. There are three aspects to a user story. The first is writing on an object such as a note card or piece of paper containing a brief description of the user story and representing the need for further discussion of the user story. The second is said discussion, which should be a thorough, in-person discussion between all who have a stake or role in the successful creation of the product and should determine more of what the customer wants and the size and priority of the story, as well as whether the story should be broken into more manageable chunks. The third is what criteria the product should meet in order to have successfully implemented the user story, which will be converted into tests that can determine whether the user story has been followed successfully. User stories need to be clear enough that tests can determine that a story has been met, vague enough that developers can be creative and thoughtful in their implementation, small enough that the effort required to implement them can be estimated, not dependent on other stories being implemented first, and beneficial to the customer. Before implementation, user stories must be broken down into multiple implementation tasks, which must be very clear such that you can definitively tell when they're done, achievable with the developers and time allocated for them, and necessary to the implementation of the user story they're in service of. Getting the functional requirements from the customer can be difficult because they may say that the product should follow some current business policy that may change (and possibly necessitate a change to the product) in the future, they may describe unnecessary details of their ideal final product in place of the fundamentals of the product's purpose, they may not know exactly what they want from the product, the developers and customer may struggle to communicate in terms the other understands, the requirements will inevitably change over the course of the project, and the customer may bicker amongst themselves. Once the functional requirements have been determined, they need to be categorized, prioritized, and examined to determine if each is consistent with the intended function of the final product, necessary to implement the essential functionality of the product, testable, doable given the resources being worked with, and unambiguous.
+
+<h2>Section Summary</h2>
+As programmers, we are more inclined to just start writing code and fix the problems on the go. That practice is not very productive and can lead to a lot of trouble in the grand scheme of a project. To avoid such problems, a programmer needs to determine a set of requirements before they start working on the actual code. 
+
+<h2>Summary of Pages 47-51</h2>
+chapter 4 is a interesting chapter it talked about requirements, and it was in three parts, requirements, requirement Digging, and analyzing the requirements. on pages 47-49 it listed out a few requirements for example measurable it being able to understand what needs to be done and be able to understand how long it would take to complete that program. also chapter 4 on pages 49-50 it talked about requirements digging or requirements elicitation, which is being able to get a user to tell you what they want. and being able to know that requirements hat customer don't know that want yet.
+one requirements elicitation is problems of scope which is being able to know what a customer want and make sure it can be done in the time limit required. the last part is analyzing the requirement which is taking the time to see if the requirements are really needed and is it consistent with the overall projects objective.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Which of the following is not a benefit of requirements? (pg. 39)
+<ol>
+<li class="answer wrong">Helps you make fewer errors</li>
+<li class="answer right">Helps you implement the program</li>
+<li class="answer wrong">Helps you come up with a good design</li>
+<li class="answer wrong"> Helps you listen to the users</li>
+</ol>
+</span>
+
+<h1 id="4.1">4.1: What Types of Requirements Are We Talking About? (Pg: 39)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+We care about <em>functional requirements</em>. They are the features that a user will experience when using the product. There are four types of those requirements:
+<ol>
+<li>User Requirements</li>
+<li>Domain Requirements</li>
+<li>Non-functional Requirements</li>
+<li>Non-requirements</li>
+</ol>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+What are functional requirements? (pg. 39)
+<ol>
+<li class="answer wrong">The number of functions in the program</li>
+<li class="answer wrong">The required efficiency level of the program</li>
+<li class="answer right">The features users can see and use</li>
+</ol>
+
+Which of these is not a type of functional requirement? (pg. 39)
+<ol>
+<li class="answer right">Developer Requirements</li>
+<li class="answer wrong">Domain Requirements</li>
+<li class="answer wrong">User Requirements</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Types of Functional Requirements: pg. 40-41
+</span>
+
+<h1 id="4.2">4.2: User Requirements (Pg: 40)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Always written in natural language; things that a user expects to see in their screen. This would include things like the descriptions of screen layouts, dialog boxes, and menus. Creating scenarios is helpful. Use visuals (pictures, mock-up webpages) to better understand and discuss the requirements.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Which of the following is not a trait of user requirements? (pg. 40)
+<ol>
+<li class="answer wrong">They include descriptions of screen layouts and dialog boxes</li>
+<li class="answer wrong">They're nearly always expressed in natural language</li>
+<li class="answer right">They always include a number of statistics</li>
+</ol>
+</span>
+
+<h1 id="4.3">4.3: Domain Requirements (Pg: 40)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+These are more like guidelines for the design of your product based on the industry you are working in. These are usually set universally and the programmer doesn't necessarily need to write them down. They just need to refer to them in order to remain in the set guidelines. Users would be not be concerned with these requirements as long as the user experience is not affected.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Developers must write down all the domain requirements for projects. (pg. 40)
+<ol>
+<li class="answer wrong">True</li>
+<li class="answer right">False</li>
+</ol>
+</span>
+
+<h1 id="4.4">4.4: Non-Functional Requirements (Pg: 40)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+These are the constraints that the programmer has to work within. Some of the examples would include target platform specifications, timing constraints, performance requirements, memory usage requirements etc. They do affect the user experience but are not visible to the user.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Which of the following is not an example of a non-functional requirement? (pg. 40)
+<ol>
+<li class="answer wrong">Memory usage requirements</li>
+<li class="answer wrong">Security requirements</li>
+<li class="answer right">Screen layout requirements</li>
+</ol>
+</span>
+
+<h1 id="4.5">4.5: Non-Requirements (Pg: 41)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+There are certain things the final product will not be able to do. The programmer needs to communicate these things to the client so they can manage their expectations. 
+</span>
+
+<h1 id="4.6">4.6: Requirements Gathering in a Plan-Driven Project (Pg: 41)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+We are only concerned about the <em>functional requirements</em> during this phase of planning. Those requirements are just the things that the user will experience, written down in simple layman's terms. 
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Which of the following describes the internal implementation details of a program? (pg. 41)
+<ol>
+<li class="answer wrong">Domain specification</li>
+<li class="answer right">Technical specification</li>
+<li class="answer wrong">Functional specification</li>
+</ol>
+
+Agile methodologies include writing down functional requirements. (pg. 41)
+<ol>
+<li class="answer right">True</li>
+<li class="answer wrong">False</li>
+</ol>
+</span>
+
+<h1 id="4.7">4.7: But I Don't Like Writing! (Pg: 41)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+The Sapir-Whorf linguistic relativity hypothesis, when roughly paraphrased, says that our ability to think and express those thoughts is limited by the language that we use. Using more expressive language can boost the effectiveness of figuring the requirements. That means it is highly recommended that the programmers write things down in regular, more expressive language before using the computer languages to implement the coding process.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Which of the following isn't a reason you should always write functional requirements in natural language? (pg. 41-42)
+<ol>
+<li class="answer right">Because it will make you better at talking to customers and coworkers</li>
+<li class="answer wrong">Because the language you use determines what kinds of thoughts you are able to have</li>
+<li class="answer wrong">To avoid getting bogged down in the syntactic and semantic details of a programming language before you need to</li>
+</ol>
+</span>
+
+<h1 id="4.8">4.8: Outline of a Functional Specification (Pg: 42)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Different projects have different specifications. The elements of functional specifications are:
+<ol>
+<li>Overview</li>
+<li>Disclaimer</li>
+<li>Author's name</li>
+<li>Scenarios of typical usage</li>
+<li>Open Issues</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Outline of a Functional Specification: pg. 42-43
+</span>
+
+<h1 id="4.9">4.9: Overview (Pg: 42)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+This is the executive summary of the product. It briefly explains what the program is supposed to do.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+How long should the overview in a functional specification be? (pg. 42)
+<ol>
+<li class="answer wrong">1-3 sentences</li>
+<li class="answer right">1-2 paragraphs</li>
+<li class="answer wrong">1 page</li>
+</ol>
+</span>
+
+<h1 id="4.10">4.10: Disclaimer (Pg: 42)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Make sure to violently declare that things are not finalized in the planning phase and if somebody believes something is wrong/missing, it can be fixed using proper communication.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+At some point the disclaimer should change to say that the specification is finished. (pg. 42)
+<ol>
+<li class="answer right">True</li>
+<li class="answer wrong">False</li>
+</ol>
+</span>
+
+<h1 id="4.11">4.11: Author's Name (Pg: 42 - 43)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+It is usually either the Development Manager or the Project Manager, based on how the organization operates. There are pros and cons to both of them. Ideally, the author should be able to understand the technical aspects well enough to write proper specifications meanwhile also having good people skills to be able to get the stakeholders on board with everything.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Who should be responsible for the functional specification? (pg. 42)
+<ol>
+<li class="answer right">One person</li>
+<li class="answer wrong">The development team</li>
+<li class="answer wrong">A project manager</li>
+</ol>
+</span>
+
+<h1 id="4.12">4.12: Scenarios of Typical Usage (Pg.43)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+These are the requirements of the project. You can show a programs typical usage to get customers because you can present several scenarios of typical usage as part of the specifications.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Scenarios of Typical Usage are an effective way of identifying requirements because?:
+<ol type="a">
+<li class="answer right">If you write the scenarios as if they're user stories, the customer is more likely to read them.</li>
+<li class="answer right">Customers are more likely to understand what you're doing and come up with ideas for things you've missed or gotten wrong.
+</li>
+<li class="answer wrong">It allows for the customer to see low level requirements.</li>
+<li class="answer wrong">They help the developers identify which requirements they want.</li>
+<li class="answer wrong">Scenarios do not help identify requirements.</li>
+</ol>
+</span>
+
+<h1 id="4.13">4.13: Open Issues (Pg.43)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+There will be a few unknown things during the write-up of the functional specification. Create an issue and leave it open as the project progresses. Each time the customer is met with, try to get the answers to these open issues.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+The open issues section includes:
+<ol type="a">
+<li class="answer wrong">unknowns from the user requirements</li>
+<li class="answer right">unknowns from the functional specifications</li>
+<li class="answer wrong">unknowns from the technical specifications</li>
+</ol>
+</span>
+
+<h1 id="4.14">4.14: Design and New Feature Ideas (Pg. 43-44)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Project managers and developers create two different types of notes. These types of notes are technical notes containing design or coding ideas for developers. An example of these notes can consist of a backlog: A set of notes containing requirements that are to be implemented on the next release.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+What are three positives of Backlogs?
+<b class="answer hidden">
+<ol>
+<li>lets the customer know you haven't forgotten about those features.</li>
+<li>lets the customer know that by moving these features to the next release you are committed to delivering the current release as close to the published schedule as possible.</li>
+<li>it tells the developers that you're not out of control and that the project has a good shot at being done with high quality and on time.</li>
+</ol>
+</b>
+</span>
+
+<h1 id="4.15">4.15: One More Thing (pg.44)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Don't spend all of you're time obsessing about making sure every functional specification is correct. Chances are the customer will add additional requirements anyway. Also functional specifications are only considered complete after ship and release, so once again don't obsess.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+When is the only time a functional specification is complete?<br><br>
+<b class="answer hidden">When you ship the release.<br></b>
+</span>
+
+<h1 id="4.16">4.16: Requirements Gathering in an Agile Project (pg.44)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+There is no functional specification in an agile development project. This is because developers of an agile team recognize that requirements will change over the course of a project and embrace that.  There is no need to gather requirements because an agile development team contains the customer as part of the team. That way there is room for immediate feedback, and timely updates on requirements.
+</span>
+
+<h1 id="4.17">4.17: The Three Cs (pg.44)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+A user story has 3 fundamental components: the card, the conversation, and the confirmation.
+</span>
+
+<h1 id="4.18">4.18: Card (pg.45)</h1>
+<span class="summary">
+<h2>Summary</h2>
+A piece of paper, index card etc. Any physical thing in which the user story is written on. This acts as an invitation to a collaborative conversation about what the story really is and wants.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+A card is usually a detailed story?:
+<ol type="a">
+<li class="answer wrong">True</li>
+<li class="answer right">False</li>
+</ol>
+</span>
+
+<h1 id="4.19">4.19: Conversation (pg.45)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Takes place between important stakeholders in the project. This conversation essentially covers material that the owner really wants to see in the story. This can include revisions to the story, time estimates, and more details about the story.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+The conversation about a user story takes place between all the important stakeholders in the project?:
+<ol type="a">
+<li class="answer right">True</li>
+<li class="answer wrong">False</li>
+</ol>
+</span>
+
+<h1 id="4.20">4.20: Confirmation (pg.45)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+The last component of the user story. The product owner provides this as the final form of acceptance criteria for the story. Typically very simple and written on the back of the card as bullet points.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+What format are the acceptance criteria usually written in?:
+<ol type="a">
+<li class="answer wrong">Paragraph</li>
+<li class="answer right">Bullet list</li>
+<li class="answer wrong">Ordered list</li>
+<li class="answer wrong">Markdown</li>
+</ol>
+</span>
+
+<h1 id="4.21">4.21: INVEST in Stories (pg.45)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+The previous 3 components of a user story tell us about the system. The acronym INVEST refers to the quality of the story.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+What does the acronym INVEST stand for?:<br><br>
+<b class="answer hidden">
+I - Independent<br>
+N - Negotiable<br>
+V - Valuable<br>
+E - Estimable<br>
+S - Small<br>
+T - Testable<br>
+</b>
+</span>
+
+<h1 id="4.22">4.22: Independent (pg.45)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Each user story should be independent of each other. That way a single user story can be scheduled and implemented separately from any other user story. This can be important based on which agile process a team is using.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Stories should be dependent on each other?:
+<ol type="a">
+<li class="answer wrong">True</li>
+<li class="answer right">False</li>
+</ol>
+</span>
+
+<h1 id="4.23">4.23: Negotiable (pg.46)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+A good story has room for negotiation among the parties involved. This should leave the developer and owner room to create an unique and workable implementation.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+The story is specific that reads like a contract?:
+<ol type="a">
+<li class="answer wrong">True</li>
+<li class="answer right">False</li>
+</ol>
+</span>
+
+<h1 id="4.24">4.24: Valuable (pg.46)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+A good user story must have some kind of value to the customer. It must describe a feature or service that will be implemented in the product before the iteration is complete. Also, if a teams user story is too long, they should separate them into two smaller stories to be implemented in two different iterations.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Should splitting stories be based on value to the customer or technology?:<br><br>
+<b class="answer hidden">Value to the customer.<br></b>
+</span>
+
+<h1 id="4.25">4.25: Estimable (pg.46)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Estimation is apart of the negotiation on the conversation. User stories must be able to be estimated because the product owner needs to be able to assign a relative priority to the story. Stories should not be too long, if so they might be subject to story splitting for a future iteration.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+How many person-hours ideally should a story be broken up into?:
+<ol type="a">
+<li class="answer wrong">2</li>
+<li class="answer right">8</li>
+<li class="answer wrong">16</li>
+<li class="answer wrong">20</li>
+</ol>
+</span>
+
+<h1 id="4.26">4.26: Small (pg.46)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+As stated a few times above, good user stories should be relatively small. This also helps increase the accuracy of the user story estimation. Rule of thumb: Should take no more than eight man-hours of work to complete.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Good user stories should be small?:
+<ol type="a">
+<li class="answer right">True</li>
+<li class="answer wrong">False</li>
+</ol>
+</span>
+
+<h1 id="4.27">4.27: Testable (pg.46)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+User stories must be testable. This relates back to the idea of traceability where you should be able to trace a feature back through previous iterations designs, and requirements. This will confirm if the user story is correctly implemented.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Who writes the acceptance criteria?
+<ol type="a">
+<li class="answer wrong">The developers</li>
+<li class="answer wrong">The stakeholders</li>
+<li class="answer wrong">The development manager</li>
+<li class="answer right">The product owner</li>
+</ol>
+</span>
+
+<h1 id="4.28">4.28: Product Backlog</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Project owner gets to decide the deadline and release date of the project. p.47
+<ul>
+<li class="answer right">True</li>
+<li class="answer wrong">False</li>
+</ul>
+</span>
+
+<h1 id="4.29">4.29: SMART Tasks</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+Describe Tasks. p.47<br><br>
+<b class="answer hidden">Implementable user stories with certain goals which are easy to estimate with effort requiring a relatively short amount of time.<br></b>
+</span>
+
+<h1 id="4.34">4.34: Time-Boxed</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+The goal of time-boxed is to: p.48
+<ol type="a">
+<li class="answer right">finish within the iteration</li>
+<li class="answer wrong">having fixed time schedule</li>
+<li class="answer wrong">overestimate the velocity</li>
+<li class="answer wrong">underestimate the velocity</li>
+</ol>
+</span>
+
+<h1 id="4.36">4.36: Requirements Digging</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+An example of an actual requirement of a project is: p.48,49
+<ol type="a">
+<li class="answer right">The system must let the user choose a loan term</li>
+<li class="answer wrong">Loan terms must be between 6 months and 30 years</li>
+<li class="answer right">Loan terms are of finite length but the length of the loan will vary by the type of loan.</li>
+<li class="answer wrong">The user must be able to select a loan term using a drop-down list box.</li>
+</ol>
+</span>
+
+<h1 id="4.39">4.39: Problems of Understanding</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+Two ways to overcome problems of understanding are: p.49
+<b class="answer hidden">
+<ol>
+<li>Having someone in the middle who has lived in both worlds and who can translate between the two.</li>
+<li>To have the customer as a part of the development team.</li>
+</ol>
+</b>
+</span>
+
+<h1 id="4.42">4.42: Analyzing the Requirements</h1>
+
+<span class="questions">
+<h2>Questions</h2>
+3 steps of analyzing requirements are: p.51
+<b class="answer hidden">
+<ol>
+<li>Categorize them</li>
+<li>Prioritize them and</li>
+<li>Examine each of them.</li>
+</ol>
+</b>
+
+Precise requirements also means they are testable requirements.	p.51
+<ul>
+<li class="answer right">True</li>
+<li class="answer wrong">False</li>
+</ul>
+</span>
+
+<h1 id="18">18: Ethics and Professional Practice (pg. 283)</h1>
+
+<span class="summary">
+<h2>Chapter Summary</h2>
+
+<h3>Intro to Ethics</h3>
+
+Ethics are "rules" that allow us to decide the right from wrong. As software developers, we are expected to maintain these ethics as they apply in the realm of computer science.
+
+<h3>Ethical Theory</h3>
+
+The ethical theory is an attempt to understand how to deal with ethical conundrums that the software developers might face when designing certain types of software. The theory is then used to construct ethical rules that the software developers then follow.<br><br>
+
+There are two main types of Ethical Theories:
+
+<ol>
+<li>Deontological Theory: Ethical decisions should be guided by moral law and should apply universaly. The rules should be logically sane and rational. Since the rules are morally universal, they don't discriminate. The universality does present some conflicts that are hard to resolve with these rules. There is also little to no concern for consequenses of the said rules(or actions based on those rules).</li>
+
+<li>Consequentialism (Teleological Theory): Here, the actions are evaluated based on the outcome. The good is prioritized over the right. Utilitarianism is a type of consequentialist theory that weight the happiness induced after an act. If the net sum is positive, the act is considered good.</li>
+</ol>
+
+<h3>Ethical Drivers</h3>
+
+In the world of computing and software development, there are two main ethical drivers that help set and maintain the ethical rules. Namely,
+
+<ol>
+<li>Legal Drivers: The state, federal and international laws should always be considered as there is no way around them. Hence, legal drivers pay a big role in setting the rules.</li>
+
+<li>Professional Drivers: Every profession has certain professional codes of conduct they have to follow. The ethics in sofware development world are defined by the <em>Association for Computing Machinery (ACM)</em> and the <em>IEEE Computer Society (IEEE-CS)</em>.</li>
+</ol>
+
+<h3>Ethical Discussion and Decision-making</h3>
+
+Here are some general steps that can be followed during ethical decision-making:
+
+<ol>
+<li>Identifying and describing a problem: Writing down the problem; list the risks and consequences; make a list of everyone affected by the decision; identify all the ethical issues and the rules that might apply; identify the legal issues; list possible actions in case of a more complex conundrum</li>
+
+<li>Analyzing the Problem: Check your moral intuition; identify your responsibilities; identify the rights of those involved or affected by the issue; consider the consequences; refer to the rules of the professional drivers like ACM; try using the deontological and utilitarian theories for the issue; list each course of action; choose the best option; if two or more actions seem equally good, pick one and reflect</li>
+</ol>
+</span>
+
+<h1 id="18.1">18.1: Introduction to Ethics (pg. 283)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Ethics is the study of how to decide if something is right or wrong. For us, in this chatper, we are considered as software developers and there are compter ethics for software developers. These ethics are all related to colleges, mangaers, and customers which can then effect on ourselves, company and on the users.
+</span>
+
+<h1 id="18.2">18.2: Ethical Theory (pg. 284)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Here ethics is the sutdy of what it means to do the right thing and how to do right thing in different situations. There are ethical rules that need to follow when we deal with other people. The rules includes considering the actions or decisions effect other people, keeping promises, being honest and not stealing.
+</span>
+
+<h1 id="18.3">18.3: Deontological Theories (pg. 284-286)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Deontologists believe people's acitons should be guided by the moral laws and they need to be universal which can apply in any matter. The arguments focus on the intent of an act and how that act is or is not defensible as an application of a moral law which do not concern with consequences of an act. The fundamental ideas of deontological theory that Kant contributed are - the ethical rules must be universal which could be appply for any cases, the law should respect rational human beings and they are logically correct or reasonably accpected. Adavantages of deontological ethics are that - they are rational which means they can be explained logically, they are morally universal judgments, and there is no discrimination. Disatvantages are that the rules are so universal that they can get conflicted and the deintological arguments can not reslove the conflict and they do much concern about the consequences.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+How does one determine whether a moral rule is correct or good?<br><br>
+<b class="answer hidden">A moral rule can be tested using the principle of universality. The book takes the example of promises to demonstrate the use of this principle. The moral being tested here is <em>I am allowed to make promises with the intention of breaking them later.</em> Applying this rule universally, we reach the conclusion that the word <em>promise</em> stops having a meaning if one can just break it at will based on their circumstances. Hence, the rule does not stand the universality principle.<br><br></b>
+if an action is only moral when can be back up by reason, what happen when one person reason for doing something is different then another person reals for doing something which reason do you chose?<br><br>
+<b class="answer hidden">there needs to be some law that don't care about your reason to decide if its right or wrong. for example I steal food to feed my family, my reason is a rational I have a family that will die if they don't eat.<br></b>
+</span>
+
+<span class="references">
+<h2>References</h2>
+Pg. 286: This page contains the pros and cons of the deontological ethics; can be useful in the future when making ethical decisions.<br><br>
+Deontological Theories
+<ol>
+<li>"here are ethical constants and rules that must apply universally": everyone should follow some  moral law, then people won't be confused on what's right and what's wrong everyone would follow the same moral laws</li>
+<li>"You should always act so as to treat yourself and others as ends in themselves and
+not means to an end": don't take advantage of people. treat people like you want to be treated.</li>
+<li>"Logic or reason determine the rules of ethical behavior": your actions need to be back by reason in order for it to be morally right.</li>
+</ol>
+good thing about Deontological:(286)
+<ol>
+<li>is it rational: is your actions backed by reason</li>
+<li>the principle of universality produces universal moral guidelines: can this role apply to everyone no matter what.</li>
+<li>everyone is morally equals</li>
+</ol>
+Bad thing about Deontological:(286)
+<ol>
+<li>no single rule can fully characterize an action: you can break one rule for another one.</li>
+<li>there isn't a way to resolve an conflict between two or more moral rules.</li>
+<li>there isn't any exception to the rules</li>
+</ol>
+</span>
+
+<h1 id="18.4">18.4: Consequentialism (Teleological Theories) (pg. 287-289)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Consequentialism or Teleological theory thinks about the consequences of the act in addition to the act itself. These theroies "give priority to the good over the right and evaluate actions by the goal or consequences that they produce, hence the name consequentialism."(287) A classic form of consequentialism is utilitarianism in which if the net sum of happiness after an action is positive the act is good, if it is negative it is bad. It aims to create the largest net good for the greatest number. In the exampe of building a new, straighter highway we need ot think about the net good done. So this includes the positives of a fuel saved by all commuters, need for the state to maintain the road, the people that will need to be relocated and more.
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+What are the downsides of <em>act utilitarianism</em>?<br><br>
+<b class="answer hidden">This type of utilitarianism leads us down a path of complex calculations based on the ethical components of the action being evaluated. It also hinges heavily on <em>moral luck</em>.<br><br></b>
+How is <em>act utilitarianism</em> different than <em>rule utilitarianism</em>?<br><br>
+<b class="answer hidden">Act utilitarianism is the theory that says that an action is good if its net effect produces more happiness than unhappiness. Rule utilitarianism uses the same principle and only applies it to ethical rules instead of individual actions.<br></b>
+</span>
+
+<h1 id="18.5">18.5: Ethical Drivers (pg. 289)</h1>
+
+<span class="references">
+<h2>References</h2>
+Pg. 289-290: <em>ACM Code of Ethics and Professional Conduct</em> and <em>ACM/IEEE-CS Software Engineering Code of Ethics</em>
+</span>
+
+<h1 id="18.6">18.6: Legal Drivers (pg. 289)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+"In all ethical discussions we must consider the law because laws constrain our actions and also guide us down ethical paths that society has decided are acceptable behaviour"
+</span>
+
+<h1 id="18.7">18.7: Professional Drivers (pg. 289-290)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Professions have sets of ethical drivers that decribe how members of that profession are expected to behave. There are codes of conduct for every profession including software development.
+</span>
+
+<h1 id="18.8">18.8: Preamble to the ACM/IEEE-CS Software Engineering Code of Ethics (pg. 290)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Because Software and computing is central and growing to many different industries including medicine, education, and society at large. Software engineers have significant oppotunities to cause harm or do good. Bacuse of this sofware engineers shall adhere to the following Code of Ethics and Professional Practice. The Code contains eight Principles related to the behavior of and decisions made by professional software engineers, including practitioners, educators, managers, supervisors and policy makers, as well as trainees and students of the profession.
+</span>
+
+<h1 id="18.9">18.9: Ethical Discussion and Decision Making (pg. 291)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+One possible method of making an ethical decision involves identifying and describing the problem and then analyzing the problem and coming to a conclusion. The contents of each part can be changed to fit your situation and goals, but there are some recommended actions/questions.
+</span>
+
+<h1 id="18.10">18.10: Identifying and Describing the Problem (pg. 291)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Recommended actions:
+<ol>
+<li>Writing down the ethical problem to get a clear understanding of it</li>
+<li>Listing the risks, problems, and possible consequences</li>
+<li>Making a list of everyone involved in or affected by the decision to be made</li>
+<li>Identify all the basic ethical issues in each case and try to understand the rights and wrongs of the situation and what ethical rules might be involved</li>
+<li>Identify any legal issues, such as intellectual property issues or health and safety issues</li>
+<li>List possible actions if the problem is more complex than a simple yes or no</li>
+</ol>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Which is not an element of identifying and describing the ethical problem. (pgs. 291-292)
+<ol>
+<li class="answer wrong">List the risks, problems, and possible consequences.</li>
+<li class="answer right">Identify the rights of the stakeholders.</li>
+<li class="answer wrong">Identify any legal, intellectual property, health and safety issues.</li>
+<li class="answer wrong">List possible actions if the problem is more complex than a simple yes/no.</li>
+</ol>
+Explanation:<br><br>
+<b class="answer hidden">This is a criterium that is a part of analyzing the ethical problem.<br></b>
+</span>
+
+<span class="references">
+<h2>References</h2>
+<ol>
+<li>Write down the statement of the ethical problem. This will help to clarify what exactly you're talking about.</li>
+<li>List the risks, problems, and possible consequences.</li>
+<li>List all the stakeholders. This will include you and anyone else involved in the ethical situation and anyone involved in the consequences of the decision.</li>
+<li>Identify all the basic ethical issues in each case. Try to establish the rights and wrongs of the situation and figure out what ethical rules might be involved.</li>
+<li>Identify any legal issues. This includes intellectual property issues and health and safety issues.</li>
+<li>List possible actions if the problem is more complex than a simple yes/no.</li>
+</ol>
+</span>
+
+<h1 id="18.11">18.11: Analyzing the Problem (pg. 291-292)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Recommended actions/questions:
+<ol>
+<li>What does your moral intuition say about these issues?</li>
+<li>Identify the responsibilities of the decision maker.</li>
+<li>Identify the rights of the stakeholders (those involved or affected by the issue).</li>
+<li>Consider the consequences of each choice on the stakeholders.</li>
+<li>Find the sections of the SE Code and the ACM code related to the problem and the choices.</li>
+<li>Consider the deontological and utilitarian approaches to the problem.</li>
+<li>List, and if necessary prioritize, each course of action that the ethical theories point to.</li>
+<li>Make the choice that seems best.</li>
+<li>If multiple choices seem acceptable, pick one and reflect on your decision.</li>
+</ol>
+</span>
+
+<span class="references">
+<h2>References</h2>
+<ol>
+<li>What are your first impressions or reactions to these issues? What do your morals say?</li>
+<li>Identify the responsibilities of the decision maker. This involves things like reporting ethical problems if you're an employee and what your responsibilities might be as a manager.</li>
+<li>Identify the rights of the stakeholders.</li>
+<li>Consider the consequences of the action options on the stakeholders. Analyze the consequences, risks, benefits, harms, and costs for each action considered.</li>
+<li>Find the sections of the SE Code and the ACM code that pertain to the problem and the actions. This will help you with the ethical rules and in laying out the situation so you can consider alternatives.</li>
+<li>Consider the deontological and utilitarian approaches to the problem. You'll need to have the ethical rules you've considered in front of you, as well as the sections of the SE and ACM codes of ethics. Then run through our examples here of other ethical situations and then follow those examples for your own situation.</li>
+<li>Do the ethical theories point to one course of action? If more than one, which one should take precedence? List the different courses of action and then, if necessary, try to prioritize them. This will help you think about different courses of action.</li>
+<li>Which of the potential actions do you think is the right one? Pick it. If you're using a utilitarian approach, you might consider picking a metric.</li>
+<li>If there are several ethically acceptable options, pick one.</li>
+</ol>
+</span>
+
+<h1 id="18.12">18.12: Case Studies (pg. 292-293)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Here are four case studies depicting running into ethical problems involving intellectual property, privacy issues, system safety issues, and conflicts of interest, respectively:
+<ol>
+<li>A poor school was gifted a bunch of computers, and half of them will be used to help students struggling with math. There's a program that would really help with that, and the school has one copy of it, but there's not enough money to buy more copies. Should the school illegally copy the program to all the computers?</li>
+<li>A developer is out sick, and another developer asks the project manager to copy all the files from the sick developer's computer to his computer so he can work. What should the manager do?</li>
+<li>A program is being made that will control a radiation-dispensing device meant to destroy cancerous tumors. The project manager wants to release the program after the routine testing but before the scheduled stress testing to meet a deadline. Is that okay?</li>
+<li>A software consultant is asked to decide which of a set of companies should be given a bunch of money to make a city's new administrative computing system. The consultant's spouse works for one of the companies, and the consultant has seen and strongly approved of their spouse's proposal for the new system. How much about this should the consutant tell the city?</li>
+</ol>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+There is always a single, best solution to solving an ethical problem. (pg. 292)
+<ol>
+<li class="answer wrong">True</li>
+<li class="answer right">False</li>
+</ol>
+Explanation:<br><br>
+<b class="answer hidden">From case to case, there isn't always a clear single answer. Sometimes a team might need multiple solutions to fix their dilemma.<br></b>
+</span>
+
+<span class="references">
+<h2>References</h2>
+<ol>
+<li>Copying Software - Software needs to be put on new school computers, and the license is $5,000. Should you just copy the current software to the new computers?</li>
+<li>Who's Computer Is It? - An employee is sick and another developer asks if you can copy all of their files in order to get some important work done. What should you do?</li>
+<li>How Much Testing Is Enough? - Creating software to destroy cancerous tumors through radiation therapy. Mid-way through testing the supervisor wants to cut the testing short in order to meet a deadline. What are the ethical issues? What do you do?</li>
+<li>How Much Should You Tell? - You and you're spouse are working at competing companies. You see some of their work for a city proposal similar to yours but it is much better than your own. Do you share the fact that your spouse works at one of the bidding companies? What are the ethical issues here?</li>
+</ol>
+</span>
+
+<h1 id="18.13">18.13: The Last Word on Ethics? (pg. 293-294)</h1>
+
+<span class="summary">
+<h2>Summary</h2>
+Fundamental ethical principles you should remember and follow:
+<ol>
+<li>Be impartial: Be loyal to society and yourself as well as your company.</li>
+<li>Disclose information that others ought to have: Don't decieve, mislead, or hide information, including conflicts of interest, from those who need to know it.</li>
+<li>Respect the rights of others: Don't steal intellectual property, misuse others property, or violate civil rights.</li>
+<li>Treat others justly: Don't discriminate against others for attributes unrelated to their job.</li>
+<li>Take responsibility for your own actions and inactions.</li>
+<li>Take responsibility for the actions of those you supervise: Includes communicating effectively with your employees.</li>
+<li>Maintain your integrity: Deliver on your commitments. Be loyal to (ethical) employers. Don't ask someone to do anything you wouldn't do yourself.</li>
+<li>Continually improve your abilities.</li>
+<li>Share your knowledge, expertise, and values: You're obligated to share what you've learned from experience and to set an example.</li>
+</ol>
+</span>
+
+<span class="questions">
+<h2>Questions</h2>
+Ethical issues are inevitable when you are a software development professional. (pg.293)
+<ol>
+<li class="answer right">True</li>
+<li class="answer wrong">False</li>
+</ol>
+Explanation:<br><br>
+<b class="answer hidden">Ethical issues will always come up throughout the design of a project.<br><br></b>
+List the 6 fundamental ethical principles that you should follow as a software developer (or someone in the industry). (pg. 293)<br><br>
+<b class="answer hidden">Be impartial, disclose information that others should know, respect the rights of others, treat others justly, take responsibility for you own actions and inactions, and take responsibility of those that you supervise.<br><br></b>
+Briefly describe one of the four case studies highlighted in the chapter and describe the ethical issues present. Then share what you would do and why. Not looking for a particular answer here, this is more of a reading-check/discussion question.
+</span>
+
+<span class="references">
+<h2>References</h2>
+<ol>
+<li>Be impartial: You will have some amount of loyalty to your company, but you also must have loyalty to society as a whole and to yourself.</li>
+<li>Disclose information that others ought to have: Don't hide information from people who need to know it. Don't be deceptive or deliberately misleading. Make sure you disclose any conflicts of interest.</li>
+<li>Respect the rights of others: This includes intellectual property rights, civil rights, and other property rights. Don't steal intellectual property or misuse others property.</li>
+<li>Treat others justly: Don't discriminate against others for attributes unrelated to their job. Make sure that others receive fair wages and benefits and credit for work done.</li>
+<li>Take responsibility for your own actions and inactions: Take responsibility for everything you do-or don't do-whether good or bad.</li>
+<li>Take responsibility for the actions of those you supervise: The old saying "The buck stops here" applies to you as a manager as well. This also includes making sure you communicate effectively with your employees.</li>
+<li>Maintain your integrity: Deliver on your commitments. Be loyal to your employer (as long as they also operate in an ethical manner). Don't ask someone to do anything you wouldn't do yourself!!</li>
+<li>Continually improve your abilities: Software development and the computer industry as a whole are in a constant state of flux. Tools and languages you used in college will be obsolete five years later. Make sure you're a life-long learner.</li>
+<li>Share your knowledge, expertise, and values: The more experience you acquire in your profession, the more you're obligated to share your knowledge and expertise with your co-workers and subordinates. You should also set an example for others by living these values.</li>
+</ol>
+</span>
+
+</body>
+</html>
